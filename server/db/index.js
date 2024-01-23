@@ -13,3 +13,12 @@ export const connectDB = async () => {
     console.log(`Error connecting to DB, error: ${error}`);
   }
 };
+
+const resourceSchema = new mongoose.Schema({
+  title: String,
+  category: String,
+  type: String,
+  url: String,
+});
+
+export const Resource = mongoose.model("Resource", resourceSchema);
